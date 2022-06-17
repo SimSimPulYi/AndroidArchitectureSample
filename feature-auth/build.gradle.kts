@@ -43,8 +43,8 @@ android {
 }
 
 dependencies {
-
     implementation(project(":core-navigator"))
+    implementation(project(":common-base"))
     implementation(project(":common-design"))
 
     implementation(Dependency.Ui.CORE_KTX)
@@ -72,6 +72,10 @@ dependencies {
 
     implementation(Dependency.BottomNav.NAV_FRAGMENT)
     api(Dependency.BottomNav.NAV_UI)
+
+    implementation(Dependency.Mvi.ORBIT_CORE)
+    implementation(Dependency.Mvi.ORBIT_VIEWMODEL)
+    testImplementation(Dependency.Mvi.ORBIT_TEST)
 
     androidTestImplementation(Dependency.Compose.COMPOSE_TEST)
     debugImplementation(Dependency.Compose.COMPOSE_UI_TOOL)

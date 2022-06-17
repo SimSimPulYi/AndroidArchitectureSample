@@ -36,6 +36,7 @@ object Dependency {
             "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE_KTX}"
         const val LIFECYCLE_LIVEDATA_KTX =
             "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE_KTX}"
+        const val LIFECYCLE_RUNTIME = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYLCE}"
     }
 
     object Room {
@@ -101,5 +102,11 @@ object Dependency {
 
     object Logger {
         const val TIMBER = "com.jakewharton.timber:timber:${Versions.TIMBER_VERSION}"
+    }
+
+    object Mvi {
+        const val ORBIT_CORE = "org.orbit-mvi:orbit-core:${Versions.ORBIT}"
+        const val ORBIT_VIEWMODEL = "org.orbit-mvi:orbit-viewmodel:${Versions.ORBIT}"
+        const val ORBIT_TEST = "org.orbit-mvi:orbit-test:${Versions.ORBIT}"
     }
 }
