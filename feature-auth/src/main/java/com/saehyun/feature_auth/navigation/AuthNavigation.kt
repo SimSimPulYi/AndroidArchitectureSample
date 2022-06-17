@@ -1,5 +1,6 @@
 package com.saehyun.feature_auth.navigation
 
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
@@ -16,7 +17,7 @@ fun NavGraphBuilder.authNavigation(
         route = SampleRoute.Auth.name
     ) {
         composable(SampleScreen.Auth.AUTH_MAIN) {
-            AuthMainScreen(composeNavigator = composeNavigator)
+            AuthMainScreen(composeNavigator = composeNavigator, authMainVM = hiltViewModel())
         }
     }
 }

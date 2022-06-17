@@ -10,11 +10,14 @@ import androidx.navigation.compose.rememberNavController
 import com.saehyun.core_navigator.SampleRoute
 import com.saehyun.feature_auth.navigation.authNavigation
 import com.saehyun.feature_notice.navigation.noticeNavigation
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         installSplashScreen()
