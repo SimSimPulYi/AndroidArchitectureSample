@@ -8,7 +8,7 @@ import javax.inject.Inject
 class NoticeRemoteDataSourceImpl @Inject constructor(
     private val noticeAPI: NoticeAPI
 ): NoticeRemoteDataSource  {
-    override suspend fun fetchPosts(): Flow<PostResponse> {
+    override suspend fun fetchPosts(): PostResponse {
         return noticeAPI.fetchPosts()
     }
 }
