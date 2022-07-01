@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.SplashScreen." parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@drawable/ic_launcher_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimationDuration">2500</item>
+        <!--        This will Set the Theme of the app after the Splash Screen has been ended-->
+        <item name="postSplashScreenTheme">@style/Theme.Design.NoActionBar</item>
+    </style>
+</resources>
