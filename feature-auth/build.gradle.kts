@@ -44,6 +44,7 @@ android {
 
 dependencies {
     implementation(project(":core-navigator"))
+    implementation(project(":core-domain"))
     implementation(project(":common-base"))
     implementation(project(":common-design"))
 

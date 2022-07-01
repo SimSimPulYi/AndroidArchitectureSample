@@ -2,6 +2,7 @@ plugins {
     id(BuildPlugins.ANDROID_LIBRARY_PLUGIN)
     id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
     id(BuildPlugins.KOTLIN_KAPT)
+    id(BuildPlugins.DAGGER_HILT_PLUGIN)
 }
 
 android {
@@ -24,9 +25,6 @@ android {
             )
         }
     }
-    buildFeatures {
-        compose = true
-    }
 
     compileOptions {
         sourceCompatibility = ProjectProperties.JAVA_VERSION
@@ -39,6 +37,16 @@ android {
 }
 
 dependencies {
+
+    implementation(Dependency.Ui.CORE_KTX)
+    implementation(Dependency.Ui.APP_COMPAT)
+    implementation(Dependency.Ui.MATERIAL)
+    implementation(Dependency.Ui.CONSTRAINT_LAYOUT)
+
+    implementation(Dependency.Hilt.HILT_ANDROID)
+    implementation(Dependency.Hilt.INJECT)
+    kapt(Dependency.Hilt.HILT_ANDROID_COMPILER)
+
     implementation(Dependency.Kotlin.COROUTINES_CORE)
     implementation(Dependency.Kotlin.COROUTINES_ANDROID)
 

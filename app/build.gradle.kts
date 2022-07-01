@@ -49,6 +49,12 @@ android {
 
 dependencies {
     implementation(project(":core-navigator"))
+    implementation(project(":core-local"))
+    implementation(project(":core-remote"))
+    implementation(project(":core-data"))
+    implementation(project(":core-domain"))
+
+    implementation(project(":common-di"))
 
     implementation(project(":feature-auth"))
     implementation(project(":feature-notice"))
@@ -69,6 +75,12 @@ dependencies {
     implementation(Dependency.Compose.COMPOSE_NAV)
     implementation(Dependency.Compose.COMPOSE_ANI_NAV)
     implementation(Dependency.Compose.COMPOSE_LANDSCAPIST)
+
+    implementation(Dependency.Retrofit.RETROFIT)
+    implementation(Dependency.Retrofit.RETROFIT_CONVERTER_GSON)
+
+    implementation(Dependency.OkHttp.OKHTTP)
+    implementation(Dependency.OkHttp.OKHTTP_LOGGING_INTERCEPTOR)
 
     implementation(Dependency.Ui.SPLASH_SCREEN_API)
     implementation(Dependency.Ui.CORE_KTX)

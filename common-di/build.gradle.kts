@@ -2,6 +2,7 @@ plugins {
     id(BuildPlugins.ANDROID_LIBRARY_PLUGIN)
     id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
     id(BuildPlugins.KOTLIN_KAPT)
+    id(BuildPlugins.DAGGER_HILT_PLUGIN)
 }
 
 android {
@@ -24,9 +25,6 @@ android {
             )
         }
     }
-    buildFeatures {
-        compose = true
-    }
 
     compileOptions {
         sourceCompatibility = ProjectProperties.JAVA_VERSION
@@ -38,7 +36,11 @@ android {
     }
 }
 
+
 dependencies {
+    implementation(project(":core-data"))
+    implementation(project(":core-domain"))
+
     implementation(Dependency.Hilt.HILT_ANDROID)
     kapt(Dependency.Hilt.HILT_ANDROID_COMPILER)
 
