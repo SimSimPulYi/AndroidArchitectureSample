@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface NoticeAPI {
     @GET("posts")
-    suspend fun fetchPosts(): Flow<PostResponse>
+    suspend fun fetchPosts(): List<PostResponse>
 }
