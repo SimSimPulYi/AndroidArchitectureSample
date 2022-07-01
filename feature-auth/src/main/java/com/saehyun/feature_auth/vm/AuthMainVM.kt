@@ -1,10 +1,10 @@
 package com.saehyun.feature_auth.vm
 
 import androidx.lifecycle.ViewModel
+import com.saehyun.core_domain.usecase.fetch.FetchNoticeUseCase
 import com.saehyun.feature_auth.mvi.AuthMainSideEffect
 import com.saehyun.feature_auth.mvi.AuthMainState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import org.orbitmvi.orbit.Container
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.syntax.simple.intent
 import org.orbitmvi.orbit.syntax.simple.postSideEffect
@@ -13,8 +13,7 @@ import org.orbitmvi.orbit.viewmodel.container
 import javax.inject.Inject
 
 @HiltViewModel
-class AuthMainVM @Inject constructor(
-): ContainerHost<AuthMainState, AuthMainSideEffect>, ViewModel() {
+class AuthMainVM @Inject constructor(): ContainerHost<AuthMainState, AuthMainSideEffect>, ViewModel() {
 
     override val container = container<AuthMainState, AuthMainSideEffect>(AuthMainState())
 

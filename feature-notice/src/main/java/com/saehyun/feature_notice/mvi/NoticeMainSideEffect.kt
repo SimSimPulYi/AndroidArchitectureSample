@@ -4,5 +4,5 @@ sealed class NoticeMainSideEffect {
 
     object FetchNoticeSuccess: NoticeMainSideEffect()
 
-    object FetchNoticeFailed: NoticeMainSideEffect()
+    data class FetchNoticeFailed(val message: String): NoticeMainSideEffect()
 }

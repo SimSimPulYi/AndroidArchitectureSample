@@ -7,6 +7,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.saehyun.common_base.observeWithLifecycle
@@ -39,7 +40,7 @@ fun AuthMainScreen(
         }
     }
 
-    SampleTheme(darkTheme = true) {
+    SampleTheme(darkTheme = false) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -68,5 +69,5 @@ fun AuthMainScreen(
 @Preview
 @Composable
 fun PreviewAuthMainScreen() {
-    AuthMainScreen(rememberNavController(), AuthMainVM())
+    AuthMainScreen(rememberNavController(), hiltViewModel())
 }
