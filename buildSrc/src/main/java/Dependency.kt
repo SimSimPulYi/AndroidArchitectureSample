@@ -66,6 +66,7 @@ object Dependency {
     object Hilt {
         const val HILT_ANDROID = "com.google.dagger:hilt-android:${Versions.HILT}"
         const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.HILT}"
+        const val INJECT = "javax.inject:javax.inject:1"
     }
 
     object Moshi {
