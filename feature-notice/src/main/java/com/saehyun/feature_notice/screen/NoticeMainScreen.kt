@@ -1,5 +1,6 @@
 package com.saehyun.feature_notice.screen
 
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -10,6 +11,7 @@ import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -43,6 +45,10 @@ fun NoticeMainScreen(
 
     val context = LocalContext.current
 
+    LaunchedEffect(Unit) {
+        noticeMainVM.fetchPost()
+    }
+
     noticeMainSideEffect.observeWithLifecycle {
         when (it) {
             is NoticeMainSideEffect.FetchNoticeSuccess -> {}
@@ -53,12 +59,12 @@ fun NoticeMainScreen(
     }
 
     SampleTheme(darkTheme = noticeMainState.darkTheme) {
+
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(MaterialTheme.colors.background)
         ) {
-            noticeMainVM.fetchPost()
 
             if (noticeMainState.isLoading) {
                 CircularProgressIndicator(
