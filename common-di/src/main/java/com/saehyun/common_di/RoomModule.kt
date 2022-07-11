@@ -3,7 +3,6 @@ package com.saehyun.common_di
 import android.content.Context
 import androidx.room.Room
 import com.saehyun.core_data.local.NoticeDao
-import com.saehyun.core_data.local.NoticesTypeConverter
 import com.saehyun.core_data.local.SampleDataBase
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -32,7 +31,6 @@ object RoomModule {
         moshi: Moshi
     ): SampleDataBase = Room
         .databaseBuilder(context, SampleDataBase::class.java, "SampleDataBase")
-        .addTypeConverter(NoticesTypeConverter(moshi))
         .build()
 
     @Provides
