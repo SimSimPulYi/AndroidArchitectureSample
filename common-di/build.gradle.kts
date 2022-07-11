@@ -45,7 +45,6 @@ dependencies {
     kapt(Dependency.Hilt.HILT_ANDROID_COMPILER)
 
     implementation(Dependency.Room.ROOM_KTX)
-    implementation(Dependency.Room.ROOM_RUNTIME)
     kapt(Dependency.Room.ROOM_COMPILER)
 
     implementation(Dependency.Retrofit.RETROFIT)

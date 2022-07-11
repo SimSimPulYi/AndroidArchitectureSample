@@ -39,6 +39,9 @@ android {
 dependencies {
     implementation(project(":core-domain"))
 
+    implementation(Dependency.Moshi.MOSHI)
+    kapt(Dependency.Moshi.MOSHI_COMPILER)
+
     implementation(Dependency.Hilt.HILT_ANDROID)
     implementation(Dependency.Hilt.INJECT)
     kapt(Dependency.Hilt.HILT_ANDROID_COMPILER)
@@ -47,7 +50,6 @@ dependencies {
     implementation(Dependency.Retrofit.RETROFIT_CONVERTER_GSON)
 
     implementation(Dependency.Room.ROOM_KTX)
-    implementation(Dependency.Room.ROOM_RUNTIME)
     kapt(Dependency.Room.ROOM_COMPILER)
 
     implementation(Dependency.DataStore.DATASTORE_PREF)

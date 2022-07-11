@@ -68,6 +68,9 @@ dependencies {
     implementation(Dependency.Kotlin.COROUTINES_ANDROID)
     implementation(Dependency.Kotlin.KOTLIN_STDLIB)
 
+    implementation(Dependency.Moshi.MOSHI)
+    kapt(Dependency.Moshi.MOSHI_COMPILER)
+
     implementation(Dependency.Compose.COMPOSE_ACTIVITY)
     implementation(Dependency.Compose.COMPOSE_MATERIAL)
     implementation(Dependency.Compose.COMPOSE_PREVIEW)
