@@ -1,7 +1,6 @@
 package com.saehyun.feature_auth.vm
 
 import androidx.lifecycle.ViewModel
-import com.saehyun.core_domain.usecase.fetch.FetchNoticeUseCase
 import com.saehyun.feature_auth.mvi.AuthMainSideEffect
 import com.saehyun.feature_auth.mvi.AuthMainState
 import dagger.hilt.android.lifecycle.HiltViewModel

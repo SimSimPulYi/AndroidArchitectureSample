@@ -1,6 +1,6 @@
 package com.saehyun.feature_notice.mvi
 
-import com.saehyun.core_domain.model.FetchNoticeEntity
+import com.saehyun.domain.model.FetchNoticeEntity
 
 data class NoticeMainState(
     val isLoading: Boolean = false,

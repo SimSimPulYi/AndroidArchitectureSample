@@ -2,10 +2,10 @@ package com.saehyun.feature_notice.vm
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.saehyun.core_domain.base.Result
-import com.saehyun.core_domain.exception.NoInternetException
-import com.saehyun.core_domain.exception.UnknownException
-import com.saehyun.core_domain.usecase.fetch.FetchNoticeUseCase
+import com.saehyun.domain.base.Result
+import com.saehyun.domain.exception.NoInternetException
+import com.saehyun.domain.exception.UnknownException
+import com.saehyun.domain.usecase.fetch.FetchNoticeUseCase
 import com.saehyun.feature_notice.mvi.NoticeMainSideEffect
 import com.saehyun.feature_notice.mvi.NoticeMainState
 import dagger.hilt.android.lifecycle.HiltViewModel

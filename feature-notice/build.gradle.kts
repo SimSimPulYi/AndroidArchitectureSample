@@ -44,10 +44,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-navigator"))
-    implementation(project(":core-domain"))
-    implementation(project(":common-base"))
-    implementation(project(":common-design"))
+    implementation(project(":navigator"))
+    implementation(project(":domain"))
+    implementation(project(":core"))
+    implementation(project(":core-design-system"))
 
     implementation(Dependency.Ui.CORE_KTX)
     implementation(Dependency.Ui.APP_COMPAT)

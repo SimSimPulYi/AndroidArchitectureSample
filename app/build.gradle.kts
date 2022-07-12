@@ -48,13 +48,12 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-navigator"))
-    implementation(project(":core-local"))
-    implementation(project(":core-remote"))
-    implementation(project(":core-data"))
-    implementation(project(":core-domain"))
-
-    implementation(project(":common-di"))
+    implementation(project(":navigator"))
+    implementation(project(":local"))
+    implementation(project(":remote"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":di"))
 
     implementation(project(":feature-auth"))
     implementation(project(":feature-notice"))
