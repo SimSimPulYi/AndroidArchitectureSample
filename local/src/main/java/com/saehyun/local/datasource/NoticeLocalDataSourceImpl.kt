@@ -10,9 +10,9 @@ import javax.inject.Inject
 
 class NoticeLocalDataSourceImpl @Inject constructor(
     private val noticeDao: NoticeDao
-): NoticeLocalDataSource {
+) : NoticeLocalDataSource {
     override suspend fun fetchNotices(): List<FetchNoticeData> {
-       return noticeDao.fetchNotice().map { it.toData() }
+        return noticeDao.fetchNotice().map { it.toData() }
     }
 
     override suspend fun updatePost(entity: List<FetchNoticeData>) {

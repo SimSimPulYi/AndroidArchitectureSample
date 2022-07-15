@@ -7,7 +7,7 @@ import com.saehyun.core_data.model.FetchNoticeData
 
 @Entity(tableName = "noticeDBEntity")
 data class NoticeDBEntity(
-    @PrimaryKey (autoGenerate = true) val key: Int = 0,
+    @PrimaryKey(autoGenerate = true) val key: Int = 0,
     val userId: Int,
     val id: Int,
     val title: String,

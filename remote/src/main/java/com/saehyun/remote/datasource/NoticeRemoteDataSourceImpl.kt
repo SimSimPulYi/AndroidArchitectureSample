@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class NoticeRemoteDataSourceImpl @Inject constructor(
     private val noticeAPI: NoticeAPI
-): NoticeRemoteDataSource {
+) : NoticeRemoteDataSource {
     override suspend fun fetchNotices(): List<FetchNoticeData> {
         return try {
             noticeAPI.fetchPosts().map { it.toData() }
