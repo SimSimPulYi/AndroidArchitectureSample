@@ -2,9 +2,11 @@ package com.saehyun.feature_notice.vm
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.saehyun.domain.base.Result
 import com.saehyun.domain.exception.NoInternetException
 import com.saehyun.domain.exception.UnknownException
+import com.saehyun.domain.extention.onFailure
+import com.saehyun.domain.extention.onLoading
+import com.saehyun.domain.extention.onSuccess
 import com.saehyun.domain.usecase.fetch.FetchNoticeUseCase
 import com.saehyun.feature_notice.mvi.NoticeMainSideEffect
 import com.saehyun.feature_notice.mvi.NoticeMainState
@@ -28,31 +30,24 @@ class NoticeMainVM @Inject constructor(
         loading(true)
 
         fetchNoticeUseCase()
-            .onEach { result ->
-                when (result) {
-                    is Result.Loading -> {
-                        loading(false)
+            .onSuccess {
+                reduce { state.copy(notices = it) }
+                postSideEffect(NoticeMainSideEffect.FetchNoticeSuccess)
+            }
+            .onFailure {
+                when (it) {
+                    is NoInternetException -> {
+                        failed(it.message)
                     }
-
-                    is Result.Success -> {
-                        reduce { state.copy(notices = result.value) }
-                        postSideEffect(NoticeMainSideEffect.FetchNoticeSuccess)
-                    }
-
-                    is Result.Failure -> {
-                        result.throwable.let {
-                            when (it) {
-                                is NoInternetException -> {
-                                    failed(it.message)
-                                }
-                                is UnknownException -> {
-                                    failed(it.message)
-                                }
-                            }
-                        }
+                    is UnknownException -> {
+                        failed(it.message)
                     }
                 }
-            }.launchIn(viewModelScope)
+            }
+            .onLoading {
+                loading(false)
+            }
+            .launchIn(viewModelScope)
     }
 
     fun changeColorTheme() = intent {
